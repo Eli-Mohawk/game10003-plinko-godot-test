@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c171q66y10iy4"]
+
+[ext_resource type="Script" uid="uid://b2mblm63k5why" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="1_cwp1h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xf5hh"]
+radius = 5.0
+
+[node name="Peg" type="StaticBody2D"]
+
+[node name="Ellipse" type="Node2D" parent="."]
+script = ExtResource("1_cwp1h")
+size = Vector2(10, 10)
+circle = true
+fill_color = Color(0.3372549, 0.08627451, 1, 1)
+metadata/_custom_type_script = "uid://b2mblm63k5why"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xf5hh")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://cox2gkoc6bwch"]
+
+[ext_resource type="PackedScene" uid="uid://d058gwwdxq4xa" path="res://Prefabs/Row/row.tscn" id="1_g6gic"]
+
+[node name="Pegs" type="Node2D"]
+
+[node name="Row" parent="." instance=ExtResource("1_g6gic")]
+position = Vector2(64, 320)
+
+[node name="Row2" parent="." instance=ExtResource("1_g6gic")]
+position = Vector2(128, 384)
+
+[node name="Row3" parent="." instance=ExtResource("1_g6gic")]
+position = Vector2(64, 448)
+
+[node name="Row4" parent="." instance=ExtResource("1_g6gic")]
+position = Vector2(128, 512)
+
+[node name="Row5" parent="." instance=ExtResource("1_g6gic")]
+position = Vector2(64, 576)
+
+[node name="Row6" parent="." instance=ExtResource("1_g6gic")]
+position = Vector2(128, 640)
+
+[node name="Row7" parent="." instance=ExtResource("1_g6gic")]
+position = Vector2(64, 704)

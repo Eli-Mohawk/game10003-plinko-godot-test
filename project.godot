@@ -14,6 +14,15 @@ config/name="game10003-plinko"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=625
+window/size/viewport_height=850
+
 [dotnet]
 
 project/assembly_name="game10003-plinko"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/2d_shapes/plugin.cfg")

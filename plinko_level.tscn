@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjjxfrj0ja8ky"]
+
+[ext_resource type="PackedScene" uid="uid://cox2gkoc6bwch" path="res://Prefabs/Pegs/pegs.tscn" id="1_bprcu"]
+[ext_resource type="PackedScene" uid="uid://btwal763acvox" path="res://Prefabs/Wall_Piece/wall_piece.tscn" id="2_1had4"]
+[ext_resource type="Script" uid="uid://6vabe8q36uyw" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="3_1had4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbu1a"]
+size = Vector2(625, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbyoe"]
+size = Vector2(20, 60)
+
+[node name="plinko_level" type="Node2D"]
+
+[node name="Pegs" parent="." instance=ExtResource("1_bprcu")]
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="VerticalWall" type="Node2D" parent="Walls"]
+position = Vector2(0, 320)
+
+[node name="WallPiece" parent="Walls/VerticalWall" instance=ExtResource("2_1had4")]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WallPiece2" parent="Walls/VerticalWall" instance=ExtResource("2_1had4")]
+position = Vector2(0, 128)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WallPiece3" parent="Walls/VerticalWall" instance=ExtResource("2_1had4")]
+position = Vector2(0, 256)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WallPiece4" parent="Walls/VerticalWall" instance=ExtResource("2_1had4")]
+position = Vector2(0, 384)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="VerticalWall2" type="Node2D" parent="Walls"]
+position = Vector2(648, 320)
+
+[node name="WallPiece" parent="Walls/VerticalWall2" instance=ExtResource("2_1had4")]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WallPiece2" parent="Walls/VerticalWall2" instance=ExtResource("2_1had4")]
+position = Vector2(0, 128)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WallPiece3" parent="Walls/VerticalWall2" instance=ExtResource("2_1had4")]
+position = Vector2(0, 256)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="WallPiece4" parent="Walls/VerticalWall2" instance=ExtResource("2_1had4")]
+position = Vector2(0, 384)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Bottom" type="Node2D" parent="."]
+
+[node name="Floor" type="StaticBody2D" parent="Bottom"]
+position = Vector2(320, 840)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom/Floor"]
+shape = SubResource("RectangleShape2D_sbu1a")
+
+[node name="Rectangle" type="Node2D" parent="Bottom/Floor/CollisionShape2D"]
+script = ExtResource("3_1had4")
+size = Vector2(625, 25)
+corner_radius = 0.0
+metadata/_custom_type_script = "uid://6vabe8q36uyw"
+
+[node name="Wall1" type="Node2D" parent="Bottom"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom/Wall1"]
+position = Vector2(0, 800)
+shape = SubResource("RectangleShape2D_qbyoe")
+
+[node name="Rectangle" type="Node2D" parent="Bottom/Wall1/CollisionShape2D"]
+script = ExtResource("3_1had4")
+size = Vector2(20, 60)
+corner_radius = 0.0
+metadata/_custom_type_script = "uid://6vabe8q36uyw"
+
+[node name="Wall2" type="Node2D" parent="Bottom"]
+position = Vector2(648, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom/Wall2"]
+position = Vector2(0, 800)
+shape = SubResource("RectangleShape2D_qbyoe")
+
+[node name="Rectangle" type="Node2D" parent="Bottom/Wall2/CollisionShape2D"]
+script = ExtResource("3_1had4")
+size = Vector2(20, 60)
+corner_radius = 0.0
+metadata/_custom_type_script = "uid://6vabe8q36uyw"

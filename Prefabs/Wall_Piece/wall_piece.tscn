@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://btwal763acvox"]
+
+[ext_resource type="Script" uid="uid://6vabe8q36uyw" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="1_ds83a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_im7er"]
+size = Vector2(100, 100)
+
+[node name="WallPiece" type="StaticBody2D"]
+rotation = -0.7853982
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_im7er")
+
+[node name="Rectangle" type="Node2D" parent="."]
+script = ExtResource("1_ds83a")
+corner_radius = 0.0
+metadata/_custom_type_script = "uid://6vabe8q36uyw"
